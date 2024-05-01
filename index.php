@@ -79,6 +79,10 @@ $f3->route('GET /summary', function($f3) {
 $f3->route('GET|POST /order1', function($f3) {
     //echo '<h1>My Breakfast Menu</h1>';
 
+    //Initialize variables
+    $food ="";
+    $meal ="";
+
     // If the form has been posted
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -87,15 +91,18 @@ $f3->route('GET|POST /order1', function($f3) {
 
         //var_dump($_POST);
         // Get the data from the post array
-        $food = $_POST['food'];
+
+        if(validFood($_POST['food'])){
+            $food = $_POST['food'];
+        }else{
+            $f3->set('errors["food"]','Please enter a food');
+        }
+
         if(isset($_POST['meal'])) {
             $meal = $_POST['meal'];
         }else{
             $meal = "Default Meal - Lunch";
         }
-
-        // If the data valid
-        if (true) {
 
             // Add the data to the session array
             $f3->set('SESSION.food', $food);
@@ -103,11 +110,7 @@ $f3->route('GET|POST /order1', function($f3) {
 
             // Send the user to the next form
             $f3->reroute('order2');
-        }
-        else {
-            // Temporary
-            echo "<p>Validation errors</p>";
-        }
+
     }
     //Get the data from the model
     //and add it to the F3 hive
