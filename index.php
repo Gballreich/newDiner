@@ -7,11 +7,14 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// Require the autoload file
+//Require the autoload file
 //Require the data-layer
+//Require the validation page
 require_once ('vendor/autoload.php');
 require_once ('model/data-layer.php');
+require_once ('model/validate.php');
 //var_dump(getMeals());
+//var_dump(validFood("tacos"));
 
 // Instantiate the F3 Base class
 $f3 = Base::instance();
