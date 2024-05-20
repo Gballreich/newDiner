@@ -4,12 +4,18 @@
  * it belongs to the model
  */
 
+class DataLayer
+{
+
 //get meals for the diner app
-function getMeals(){
-    return array('breakfast','brunch', 'lunch', 'dinner', 'dessert');
-}
+   static function getMeals()
+    {
+        return array('breakfast', 'brunch', 'lunch', 'dinner', 'dessert');
+    }
 
 //get condiments for the diner app
-function getConds(){
-    return array('ketchup', 'mustard', 'mayo', 'sirracha', 'honey mustard', 'ranch');
+   static function getConds()
+    {
+        return array('ketchup', 'mustard', 'mayo', 'sirracha', 'honey mustard', 'ranch');
+    }
 }

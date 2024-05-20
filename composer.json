@@ -2,12 +2,15 @@
   "name": "tostrander/328/newDiner",
   "authors": [
     {
-      "name" : "Garrett Ballreich",
-      "email" : "ballreich.garrett@student.greenriver.edu"
+      "name": "Garrett Ballreich",
+      "email": "ballreich.garrett@student.greenriver.edu"
     }
   ],
-  "require":
-  {
+  "require": {
     "bcosca/fatfree-core": "dev-master"
+  },
+  "autoload":
+  {
+    "classmap": ["classes/", "model/"]
   }
 }
