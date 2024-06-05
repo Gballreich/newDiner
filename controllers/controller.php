@@ -41,6 +41,10 @@ class Controller
     }
     function summary()
     {
+        $order = $this->_f3->get('SESSION.order');
+        $id = $GLOBALS['datalayer']->saveOrder($order);
+        $this->_f3->set('id', $id);
+        //echo "Order $id inserted successfully!";
 
         // Render a view page
         $view = new Template();
@@ -144,5 +148,6 @@ class Controller
         $view = new Template();
         echo $view->render('views/order2.html');
     }
+
 
 }

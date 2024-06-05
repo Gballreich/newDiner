@@ -15,6 +15,12 @@ require_once('controllers/controller.php');
 // Instantiate the F3 Base class
 $f3 = Base::instance();
 $con = new Controller($f3);
+$datalayer = new DataLayer();
+
+$myOrder = new Order('breakfast', 'pancakes', 'maple syrup');
+//$id = $datalayer->saveOrder($myOrder);
+//echo "Order $id inserted successfully!";
+
 
 // Define a default route
 $f3->route('GET /', function() {
